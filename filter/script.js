@@ -10,14 +10,20 @@ sortBtn.forEach((btn)=>{
         
         sortItem.forEach((item)=>{
             if(filter === "all"){
-                item.style.display = "block";
+                item.classList.add('active');
+                item.classList.remove('delete');
+              
+                    
             }else{
                 if(item.classList.contains(filter)){
-                    item.style.display = "block";
+                    item.classList.add('active');
+                    item.classList.remove('delete');
                 }
                 else{
-                    item.style.display = "none";
+                    item.classList.remove('active');
+                    item.classList.add('delete');
                 }
+                
             }
         })
         // const filter = e.target.dataset.target;
@@ -40,6 +46,8 @@ sortBtn.forEach((btn)=>{
     
     
 })
+
+
 
 
 
@@ -73,3 +81,20 @@ sortBtn.forEach((btn)=>{
 //         }
 //     });
 // }    
+
+const search = document.querySelector('.search');
+
+search.addEventListener('keyup',(e)=>{
+    const searchFilter = e.target.value.toLowerCase().trim();
+    
+    sortItem.forEach((item)=>{
+       
+       if(item.classList.contains(searchFilter)){
+        item.classList.add('active');
+        item.classList.remove('delete');
+       }else{
+        item.classList.remove('active');
+        item.classList.add('delete');
+       }
+    })
+})

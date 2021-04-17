@@ -4,18 +4,20 @@
 a{outline: 0; text-decoration: none;}
 ol,ul.li{list-style: none;}
 
-
+body{background:antiquewhite;
+}
 .container{
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 100px 0 90px;
+    background:antiquewhite;
     
 }
 .container h2{
-    font-size: 40px;
+    font-size: 50px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    margin-bottom: 30px;
+    margin-bottom: 30px; color: peru;
 }
 .container .filter-menu{
     display: flex;
@@ -37,26 +39,61 @@ ol,ul.li{list-style: none;}
     margin-bottom: 30px;
     cursor:pointer
 }
+.container .search{
+   max-width: 300px;
+   display: flex;
+   justify-content: center;
+   margin-bottom: 15px;
+   
+}
+.container .search i{
+    padding: 10px;
+    background: peachpuff;
+    color: white;
+    width: 50px;
+    text-align: center;
+    cursor: pointer;
+    
+}
+
+.container .search input{
+    width: 230px;
+    padding: 10px;
+    outline: none;
+    font-size: 16px;
+    border:none;
+    color:peru;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    list-style: none;
+    
+}
 .container .filter-item{
     display: flex;
     flex-wrap: wrap;
     list-style: none;
     justify-content: center; 
+    align-items: flex-start;
+    
     
     
 }
 
 .container .filter-item li{
     width: 300px;;height: 300px;
-    margin:5px; transition: all 0.5s ease-in;
- 
+    margin:5px;
     
 }
-/* .container .filter-item .cake,
-.container .filter-item .cup,
-.container .filter-item .dou{
-    transition: all 0.5s ease-in;
-} */
+.container .filter-item li.active{
+    width: 300px;;height: 300px;
+    margin:5px; transition: all 0.2s ease-in-out;
+    
+}
+
+.container .filter-item li.delete{
+    width: 0px;;height: 0px;
+    margin:0px; transition: all 0.2s ease-in-out;
+    
+}
 
 .container .filter-item li img{
     width: 100%; height: 100%; margin:5px;
