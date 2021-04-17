@@ -1,30 +1,75 @@
-const sortBtn = document.querySelector('.filter-menu').children;
-const sortItem = document.querySelector('.filter-item').children;
+let sortBtn = document.querySelectorAll('.btn');
+let sortItem = document.querySelectorAll('.item');
 
-for(let i = 0; i < sortBtn.length; i++){
-    sortBtn[i].addEventListener('click', (e)=>{
+
+sortBtn.forEach((btn)=>{
+    btn.addEventListener('click', (e)=>{
         e.preventDefault();
         
         const filter = e.target.dataset.target;
-        console.log(filter)
+        
+        sortItem.forEach((item)=>{
+            if(filter === "all"){
+                item.style.display = "block";
+            }else{
+                if(item.classList.contains(filter)){
+                    item.style.display = "block";
+                }
+                else{
+                    item.style.display = "none";
+                }
+            }
+        })
+        // const filter = e.target.dataset.target;
+        
+        
+        // for(let i = 0; i < sortItem.length; i++){
+        //     if(filter === "all"){
+        //         sortItem[i].style.display = "block";
+                
+                
+        //     }else{
+        //         if(sortItem[i].classList.contains(filter)){
+        //             sortItem[i].style.display = "block";
+        //         }else{
+        //             sortItem[i].style.display = "none";
+        //         }
+        //     }
+        // }
+    })
+    
+    
+})
+
+
+
+
+
+
+// for(let i = 0; i < sortBtn.length; i++){
+//     sortBtn[i].addEventListener('click', (e)=>{
+//         e.preventDefault();
+        
+//         const filter = e.target.dataset.target;
+//         console.log(filter)
        
         
-        for(let k = 0; k < sortBtn.length; k++){
-            if (filter == "all"){
-                sortItem[k].style.display = "block";
+//         for(let k = 0; k < sortBtn.length; k++){
+//             if (filter == "all"){
+//                 sortItem[k].style.display = "block";
         
-            } else{
-                if(sortItem[k].dataset.item == filter){
-                    console.log("!!!!")
-                }
-                // if(sortItem[k].classList.contains(filter)){
-                //     sortItem[k].style.display = "block";
+//             } else{
+//                 if(sortItem[k].dataset.item == "cake"){
                     
-                // }else{
-                //     sortItem[k].style.display = "none";
+//                 }
+//                 // if(sortItem[k].classList.contains(filter)){
+//                 //     sortItem[k].style.display = "block";
                     
-                // }
-            }
-        }
-    });
-}    
+//                 // }else{
+//                 //     sortItem[k].style.display = "none";
+                    
+//                 // }
+//             }
+//         }
+//     });
+// }    
